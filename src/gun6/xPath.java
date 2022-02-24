@@ -123,8 +123,7 @@ public class xPath extends BaseStaticDriver {
            System.out.println("they are same...");
        }
         Thread.sleep(3000);
-       // driver.quit();
-
+       driver.quit();
     }
 
     public static List<String> elementToString(List<WebElement> list) {
