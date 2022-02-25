@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.support.ui.Select;
 
-import java.awt.*;
+
 
 public class Select_Practice {
 
@@ -30,8 +30,7 @@ public class Select_Practice {
         WebElement lastName = driver.findElement(By.xpath("//input[@id='last_3']"));
         lastName.sendKeys("World");
 
-        WebElement e_mail = driver.findElement(By.xpath("//input[@name='q4_email']"));
-        e_mail.sendKeys("world@gmail.com");
+
 
         WebElement adress_Line1 = driver.findElement(By.xpath("//input[@name='q5_address[addr_line1]']"));
         adress_Line1.sendKeys("Toronto, Canada");
@@ -69,12 +68,16 @@ public class Select_Practice {
         WebElement message = driver.findElement(By.xpath("//textarea[@name='q8_message']"));
         message.sendKeys("Job done");
 
+
+        je.executeScript("scroll(200, 0);"); // basarili
+        WebElement e_mail = driver.findElement(By.xpath("//input[@name='q4_email']"));
+        e_mail.sendKeys("world@gmail.com");
+
+        Thread.sleep(2000);
+        je.executeScript("scroll(0, 600);"); // basarili
+
         WebElement submit = driver.findElement(By.cssSelector("button[id='input_2'"));
         submit.click();
-        Thread.sleep(2000);
-        driver.navigate().back();
-        driver.quit();
-
         System.out.println("Test done.....");
 
 

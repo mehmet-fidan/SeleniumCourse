@@ -8,6 +8,13 @@ import utils.BaseStaticDriver;
 
 public class Action_class extends BaseStaticDriver {
 
+      /*
+     --> Action Class ile
+         Maus ile sagClick, solClik, doubleClick,
+
+
+       */
+
        public static void main(String[] args) throws InterruptedException {
 
         driver.get("https://demoqa.com/buttons");

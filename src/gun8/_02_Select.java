@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.Select;
 import utils.BaseStaticDriver;
 
 import java.util.List;
+import java.util.Locale;
 
 public class _02_Select extends BaseStaticDriver {
     public static void main(String[] args) {
@@ -27,7 +28,7 @@ public class _02_Select extends BaseStaticDriver {
         WebElement search = driver.findElement(By.cssSelector("input[type='submit']"));
         search.click();
 
-        WebElement urunIsmi = driver.findElement(By.cssSelector("(//a[@class='seo-breadcrumb-text'])[2]"));
+        WebElement urunIsmi = driver.findElement(By.xpath("(//a[@class='seo-breadcrumb-text'])[2]"));
         System.out.println("urun ismi: "+urunIsmi.getText());
 
         Assert.assertTrue(secim.contains(urunIsmi.getText()));
@@ -35,7 +36,7 @@ public class _02_Select extends BaseStaticDriver {
         String url = driver.getCurrentUrl();
         System.out.println("url: "+url);
 
-        Assert.assertTrue(url.equalsIgnoreCase(secim));
+        Assert.assertTrue(url.toLowerCase().contains(secim.toLowerCase()));
 
 
 
