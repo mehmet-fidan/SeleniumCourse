@@ -1,9 +1,13 @@
 package Practice;
 
+import gun16.BaseClass;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
@@ -15,24 +19,22 @@ public class VizyonPract {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-        driver.get("https://evdekal.hacettepe.edu.tr/login/index.php");
+        driver.get("https://www.comcec.org/tr/");
 
+     List<WebElement> anaMenu = driver.findElements(By.cssSelector("#avia-menu>li"));
 
-        //  WebElement signIn = driver.findElement(By.id("login2"));
-        // signIn.click();
+        Actions builder = new Actions(driver);
+        Action git;
 
+        for (WebElement menu : anaMenu) {
 
-        WebElement username = driver.findElement(By.cssSelector("input[name='username']"));
-        username.sendKeys("21869713");
-        WebElement password = driver.findElement(By.cssSelector("input[name='password']"));
-        password.sendKeys("198348");
-        WebElement giris = driver.findElement(By.cssSelector("button[id='loginbtn']"));
-        giris.click();
+            git =builder.moveToElement(menu).build();
+            git.perform();
+            Thread.sleep(1000);
 
-        WebElement ders = driver.findElement(By.xpath("(//span[@class='multiline'])[2]"));
-        ders.click();
-
-        System.out.println("test basarili");
+        }
+  Thread.sleep(5000);
+ driver.quit();
 
     }
 }
