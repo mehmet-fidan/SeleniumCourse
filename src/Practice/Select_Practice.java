@@ -80,6 +80,8 @@ public class Select_Practice {
         submit.click();
         System.out.println("Test done.....");
 
+        driver.quit();
+
 
     }
 }
