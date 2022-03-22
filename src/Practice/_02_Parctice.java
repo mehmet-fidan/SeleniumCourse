@@ -66,13 +66,13 @@ public class _02_Parctice extends BaseStaticDriver {
             second.sendKeys(sayi2String);
             option.getOptions().get(i).click();
             calculation.click();
-            if(i<option.getOptions().size()-1) {
+
+            if(i<option.getOptions().size()-2) {
                 wait.until(ExpectedConditions.elementToBeClickable(sonucTuru)).click();
             }
             takeScreenShot();
-            sleep(3000);
-            System.out.println(option.getOptions().get(i).getText() + " is " + answer.getText());
 
+            System.out.println(option.getOptions().get(i).getText() + " is " + answer.getAttribute("value"));
         }
 
       //  Assert.assertEquals(,answer.getText());
